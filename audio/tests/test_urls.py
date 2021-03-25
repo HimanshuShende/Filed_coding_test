@@ -40,7 +40,7 @@ class TestEndpoints(TestCase):
             Used to test Create API
         """
         url = reverse("audioCreate")
-        print ("\n########## test_audioCreate ##########")
+        print ("\n########## Create API ##########")
         # GET method for audio file creation
         get_resp = self.client.get(url)
         print ("status_code : {}, get content : ".format(get_resp.status_code), end="\n")
@@ -114,7 +114,7 @@ class TestEndpoints(TestCase):
         """
             Used to test GET API for all audio file of a audio file type.
         """
-        print ("\n\n########## test_audioFiles ##########")
+        print ("\n\n########## GET API ##########")
         audiobook_url = reverse("audioFiles", args=["audiobook"])
         song_url = reverse("audioFiles", args=["song"])
         podcast_url = reverse("audioFiles", args=["podcast"])
@@ -169,9 +169,9 @@ class TestEndpoints(TestCase):
 
     def test_audioFileFetch(self):
         """
-            Used to test Get/PUT/DELETE API for particular audio file.
+            Used to test GET/PUT/DELETE API for particular audio file.
         """
-        print ("\n\n########## test_audioFileFetch ##########")
+        print ("\n\n########## GET/PUT/DELETE API ##########")
         audiobook_url = reverse("audioFileFetch", args=["audiobook", "10"])
         song_url = reverse("audioFileFetch", args=["song", "1"])
         podcast_url = reverse("audioFileFetch", args=["podcast", "2"])
